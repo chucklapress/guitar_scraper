@@ -5,18 +5,16 @@
     <title>Guitar Tabs</title>
   </head>
   <body>
-    <h1>Search for Artist</h1>
+    <h1>Search for Song</h1>
   <form action=''>
-    <input type="text" name="artists" value="" placeholder="Artist name">
+    <input type="text" name="song" value="" placeholder="Song name">
     <input type="submit" value= "Search">
 
     {% autoescape off %}
 
-      {{artists}}
-      <br>
-      {% for item in content %}
-        {{content}}
-        {% endfor %}
+        {{songs}}
+
+    
       {% endautoescape %}
 
 
