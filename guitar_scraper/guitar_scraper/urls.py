@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from app.views import guitar_scraping_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$',guitar_scraping_view, name="guitar_scraping_view")
 ]

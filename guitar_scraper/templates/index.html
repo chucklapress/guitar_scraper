@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Guitar Tabs</title>
+  </head>
+  <body>
+    <h1>Search for Artist</h1>
+  <form action=''>
+    <input type="text" name="artists" value="" placeholder="Artist name">
+    <input type="submit" value= "Search">
+
+    {% autoescape off %}
+
+      {{artists}}
+      <br>
+      {{bands}}
+
+      {% endautoescape %}
+
+
+  </body>
+</html>
