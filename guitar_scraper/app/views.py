@@ -19,10 +19,11 @@ def guitar_scraping_view(request):
 
 
 def tablature_scrape_view(request):
-    song_tab = request.GET.get('song')
-    url = "http://www.guitartabs.cc/tabs/{}/{}/{}".format('letter', 'band', 'song')
+    song_tab = request.GET.get('title')
+    #url = "http://www.guitartabs.cc/tabs/{}/{}/{}".format('letter', 'band', 'song')
+    url = "http://www.guitartabs.cc/tabs/b/black_sabbath/"
     content = requests.get(url).text
     souper = BeautifulSoup(content, "html.parser")
-    song_tabs = str(souper.find(class_="tabscont"))
+    title = str(souper.find(class_="ryzh2"))
 
-    return render(request, "detail.html", {"song_tabs":song_tabs})
+    return render(request, "detail.html", {'title':title})
