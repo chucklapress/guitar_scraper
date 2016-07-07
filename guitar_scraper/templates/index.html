@@ -1,8 +1,11 @@
+{% extends 'base.html'%}
+{% load bootstrap_pagination %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Guitar Tabs</title>
+{% block content%}
   </head>
   <body>
     <h1>Search for Song</h1>
@@ -14,9 +17,10 @@
 
         {{songs}}
 
-    
+
       {% endautoescape %}
 
 
   </body>
+  {%endblock%}
 </html>
