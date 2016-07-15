@@ -9,10 +9,12 @@
   <body>
     {% block content %}
     <h1>Search for Tab</h1>
-  <form action=''>
+  <form class="" action="" method="post">
+
+  
     <input type="text" name="title" value="" placeholder=" title">
     <input type="submit" value= "Search">
-
+  </form>
     {% autoescape off %}
 
         {{title}}
@@ -22,12 +24,4 @@
 
 
 
-
-
-
-
     {% endblock %}
-
-
-  </body>
-</html>
