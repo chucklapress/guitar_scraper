@@ -3,13 +3,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Ultimate guitar tab search engine</title>
     <link rel="stylesheet" href='{% static "app/css/bootstrap.css" %}' media="screen" title="bootstrap" charset="utf-8">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+    <ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="{% url 'guitar_scraping_view'%}">Home</a></li>
+</div>
+</nav>
   </head>
   <body>
+    <br>
+    <br>
+    <div class="container">
     {% block content %}
         no content
     {% endblock %}
-
+    </div>
   </body>
 </html>
