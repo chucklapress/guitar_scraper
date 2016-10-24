@@ -20,5 +20,6 @@ from app.views import guitar_scraping_view, tablature_scrape_view
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',guitar_scraping_view, name="guitar_scraping_view"),
-    url(r'^tabs$',tablature_scrape_view, name= 'tablature_scrape_view')
+    url(r'^(?P<url>.+)', tablature_scrape_view, name= 'tablature_scrape_view')
+
 ]

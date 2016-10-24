@@ -17,15 +17,13 @@ def guitar_scraping_view(request):
 
     return render(request,"index.html",{"songs":songs})
 
-
-def tablature_scrape_view(request):
-    titles = request.GET.get('title')
+def tablature_scrape_view(request, url):
+    #titles = request.GET.get('title')
     #url = "http://www.guitartabs.cc/tabs/{}/{}/{}".format('letter', 'band', 'song')
-    url = "http://www.guitartabs.cc/tabs/width=82%"
-    
+    url = "http://www.guitartabs.cc/" + url
+
 
     content = requests.get(url).text
     souper = BeautifulSoup(content, "html.parser")
-    title = str(souper.find(class_="ryzh2"))
-
+    title = str(souper.find(class_="tabcont"))
     return render(request, "detail.html", {'title':title})
