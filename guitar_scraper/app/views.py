@@ -26,4 +26,6 @@ def tablature_scrape_view(request, url):
     content = requests.get(url).text
     souper = BeautifulSoup(content, "html.parser")
     title = str(souper.find(class_="tabcont"))
+    if title == 'None':
+        title = str(souper.find_all(class_='tabslist')[1])
     return render(request, "detail.html", {'title':title})
