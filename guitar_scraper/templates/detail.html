@@ -9,6 +9,18 @@
   <body>
     {% block content %}
     <h1>Search for Tab</h1>
+    <form action='' method= "post">{% csrf_token %}
+      <input type="text" name="song" value="" placeholder="songs">
+      <input type="submit" value= "Search">
+      <br>
+      <br>
+
+      {% autoescape off %}
+
+          {{songs}}
+
+
+        {% endautoescape %}
   <form class="" action="" method="post">{% csrf_token %}
 
 
